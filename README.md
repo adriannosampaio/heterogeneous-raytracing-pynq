@@ -6,6 +6,10 @@ The repository already contains the binaries and biststream needed to run the sy
 
 There are basically 2 execution modes for this software. First is the 'client' mode where you run the client application in any machine with network access to the PYNQ board, and  the second is 'server' mode that will execute on the PYNQ board.
 
+## IMPORTANT
+
+To be able to run this code on the B+PYNQ-Z1 board you need to create a symbolic link to the `pynq` folder on the file system inside the `application` folder on the repository root. That's because the pynq library is accessed by the file `application\tracers.py`.
+
 ## Client Mode
 
 To execute it in client mode you need 2 things: setup the case info in the file settings/client.json. There you'll be able to configure the output image file name, the mesh to be rendered and the ip address (and port) opened on the PYNQ board. Here's the 'client.json' file:
