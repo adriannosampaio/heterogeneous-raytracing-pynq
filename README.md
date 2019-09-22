@@ -4,7 +4,7 @@ This repository was created to provide the code to the paper "Um Sistema Heterog
 Aceleração de Interseção Raio-Triângulo" (An Embedded Heterogeneous Acceleration System for Ray-Triangle Intersections). The code provided is the state of the original code at the publishing time. 
 The repository already contains the binaries and biststream needed to run the system on the PYNQ-Z1 board from Digilent.
 
-There are basically 2 execution modes for this software. First is the 'client' mode where you run the client application. It can be any machine with network access to the PYNQ board.
+There are basically 2 execution modes for this software. First is the 'client' mode where you run the client application in any machine with network access to the PYNQ board, and  the second is 'server' mode that will execute on the PYNQ board.
 
 ## Client Mode
 
