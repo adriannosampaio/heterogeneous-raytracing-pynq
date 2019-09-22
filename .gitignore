@@ -1,0 +1,11 @@
+application/bindings/.vs/
+application/bindings/obj/
+application/bindings/Debug/
+.vs/
+__pycache__/
+application/bindings/x64/Release/
+application/bindings/x64/
+*.vcxproj
+*.make
+*.user
+*.sln
