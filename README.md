@@ -8,7 +8,7 @@ There are basically 2 execution modes for this software. First is the 'client' m
 
 ## IMPORTANT
 
-To be able to run this code on the B+PYNQ-Z1 board you need to create a symbolic link to the `pynq` folder on the file system inside the `application` folder on the repository root. That's because the pynq library is accessed by the file `application\tracers.py`.
+To be able to run this code on the PYNQ-Z1 board you need to create a symbolic link to the `pynq` folder on the file system inside the `application` folder on the repository root. That's because the pynq library is accessed by the file `application\tracers.py`.
 
 ## Client Mode
 
