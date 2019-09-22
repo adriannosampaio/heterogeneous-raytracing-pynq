@@ -1,19 +1,8 @@
 {
-	"active_preset" : "default",
-	"client" : {
-		"output" : "output.png",
-		"mesh" : "examples/bunny_2k.obj"
-	},
-
 	"edge" : {
-		"ip"   : "localhost",
+		"ip"   : "",
 		"port" : 5002,
-		"bitstream" : "/home/xilinx/adrianno/intersect_fpga_x2.bit"
-	},
-
-	"cloud" : {
-		"ip"   : "localhost",
-		"port" : 7501
+		"bitstream" : "settings/intersect_fpga_x2.bit"
 	},
 
 	"processing" : {
@@ -21,7 +10,7 @@
 		"mode" : "cpu",
 		"cpu" : {
 			"_comment" : "cpu has 3 modes: python, singlecore and multicore",
-			"mode" : "singlecore"
+			"mode" : "multicore"
 		},
 		"fpga" : {
 			"_comment" : "fpga has 2 modes: single and multi",

@@ -3,12 +3,14 @@ class Parser:
         import argparse
 
         self.parser = argparse.ArgumentParser(
-            description='Request Ray-Triangle computations to the Fog.')
+            description='Request Ray-Triangle computations to the PYNQ-Z1 renderer.')
 
+        client_info = 'client: runs on any machine that accesses the  PYNQ-Z1 renderer'
+        server_info = 'server: runs the render server on the PYNQ-Z1 board'
         self.parser.add_argument(
             '--mode', 
-            choices=['client', 'edge', 'master', 'node'],
-            help='File containing the ray geometric information')
+            choices=['client', 'server'],
+            help=f'Defines the execution mode: (1) {client_info}. (2) {server_info}')
 
         self.parser.add_argument(
             '--res',
@@ -19,6 +21,6 @@ class Parser:
         self.parser.add_argument(
             '--psize',
             type=float,
-            help='Pixel size')
+            help='Pixel size of the image')
 
         self.args = self.parser.parse_args()

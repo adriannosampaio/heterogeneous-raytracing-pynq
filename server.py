@@ -5,12 +5,7 @@ import struct
 import application.tracers as tracer
 from application.parser import Parser
 
-def save_intersections(filename, ids, intersects):
-    with open(filename, 'w') as file:
-        for tid, inter in zip(ids, intersects):
-            file.write(f'{tid} {inter}\n')
-
-class DarkRendererEdge():
+class RendererServer():
 
     def __init__(self, config):        
         
@@ -33,12 +28,12 @@ class DarkRendererEdge():
 
         processing = config['processing']
         mode = processing['mode']
-        self.heterogeneous_mode = (mode == 'heterogenous')
-        self.cpu_active = mode in ['cpu', 'heterogenous']
-        self.fpga_active = mode in ['fpga', 'heterogenous']
+        self.heterogeneous_mode = (mode == 'heterogeneous')
+        self.cpu_active = mode in ['cpu', 'heterogeneous']
+        self.fpga_active = mode in ['fpga', 'heterogeneous']
         
         if self.heterogeneous_mode:
-            self.fpga_load_fraction = processing['heterogenous']['fpga-load']
+            self.fpga_load_fraction = processing['heterogeneous']['fpga-load']
 
         if self.cpu_active:
             cpu_mode = processing['cpu']['mode']    
@@ -155,7 +150,7 @@ class DarkRendererEdge():
         size = struct.unpack('>I', raw_size)[0]
         log.info(f'Finishing receiving scene file size: {size}B')
         
-        CHUNK_SIZE = 256
+        CHUNK_SIZE = 256*1024
         full_data = b''
         while len(full_data) < size:
             packet = self.connection.recv(CHUNK_SIZE)

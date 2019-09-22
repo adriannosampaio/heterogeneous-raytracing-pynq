@@ -24,7 +24,7 @@ class Session:
 		for i in range(self.num_rays):
 			yield self.input_file.readline()
 
-class DarkRendererClient:
+class RendererClient:
 	'''	Class responsible for the DarkRenderer client behavior.
 		This includes the TCP requests to the Fog/Cloud, task 
 		sending and receiving the results.

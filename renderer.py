@@ -3,8 +3,8 @@ import socket
 import struct
 import logging as log
 from application.parser import Parser
-from darkclient import DarkRendererClient
-from darkedge import DarkRendererEdge
+from client import RendererClient
+from server import RendererServer
 
 parser = Parser()
 
@@ -18,7 +18,7 @@ def run_client(config):
 	hres, vres = parser.args.res
 	psize = parser.args.psize
 	
-	client = DarkRendererClient(config=config)
+	client = RendererClient(config=config)
 	image_name = config['client']['output']
 	object_file = config['client']['mesh']
 	
@@ -57,7 +57,7 @@ def run_client(config):
 	log.info(f'Finished shading calculations in {time() - ti} seconds')
 
 def run_edge(config):
-	dark_node = DarkRendererEdge(config)
+	dark_node = RendererServer(config)
 	try:
 	    dark_node.start()
 	finally:
@@ -69,12 +69,15 @@ def main():
 		format='%(levelname)s: [%(asctime)s] - %(message)s', 
 		datefmt='%d-%b-%y %H:%M:%S')
 	
-	config = json.load(open("settings/default.json"))
 	log.info(f'Starting in {parser.args.mode} mode')
 	if parser.args.mode == 'client':
-		run_client(config)
-	elif parser.args.mode == 'edge':
-		run_edge(config)
+		run_client(
+			json.load(
+				open("settings/client.json")))
+	elif parser.args.mode == 'server':
+		run_edge(
+			json.load(
+				open("settings/server.json")))
 
 
 if __name__ == '__main__':

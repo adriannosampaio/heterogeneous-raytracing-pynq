@@ -1,0 +1,12 @@
+{
+	"client" : {
+		"output" : "output.png",
+		"mesh"   : "examples/bunny_2k.obj"
+	},
+
+	"edge" : {
+		"ip"   : "localhost",
+		"port" : 5002,
+		"bitstream" : "/home/xilinx/adrianno/intersect_fpga_x2.bit"
+	}
+}
