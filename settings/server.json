@@ -1,18 +1,18 @@
 {
 	"edge" : {
 		"ip"   : "",
-		"port" : 5002,
-		"bitstream" : "settings/intersect_fpga_x2.bit"
+		"port" : 5000,
+		"bitstream" : "settings/intersectfpga_04_pipe_loop_v02.bit"
 	},
 
 	"processing" : {
 		"_comment" : "3 modes: fpga, cpu and heterogeneous",
-		"mode" : "cpu",
+		"mode" : "fpga",
 		"cpu" : {
 			"_comment" : "cpu has 3 modes: python, singlecore and multicore",
-			"mode" : "multicore"
+			"mode" : "singlecore"
 		},
-		"fpga" : {
+		"fpga" : { 
 			"_comment" : "fpga has 2 modes: single and multi",
 			"mode" : "multi"
 		},

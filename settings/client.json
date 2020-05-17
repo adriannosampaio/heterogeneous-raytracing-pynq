@@ -7,6 +7,6 @@
 	"edge" : {
 		"ip"   : "localhost",
 		"port" : 5002,
-		"bitstream" : "/home/xilinx/adrianno/intersect_fpga_x2.bit"
+		"bitstream" : "/home/xilinx/heterogeneous-raytracing-pynq/settings/intersect_fpga_x2.bit"
 	}
 }
