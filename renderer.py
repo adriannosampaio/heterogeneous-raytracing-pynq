@@ -59,13 +59,14 @@ def run_client(config):
 def run_edge(config):
 	dark_node = RendererServer(config)
 	try:
-	    dark_node.start()
+		for i in range(60):
+			dark_node.start()
 	finally:
 	    dark_node.cleanup()
 
 def main():
 	log.basicConfig(
-		level=log.WARNING, 
+		level=log.INFO, 
 		format='%(levelname)s: [%(asctime)s] - %(message)s', 
 		datefmt='%d-%b-%y %H:%M:%S')
 	

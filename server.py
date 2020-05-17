@@ -77,6 +77,11 @@ class RendererServer():
         tf = time()
         log.warning(f'Finishing intersection calculation in {tf - ti} seconds')
 
+        time_msg = f'{tf - ti}'
+        size = len(time_msg)
+        msg = struct.pack('>I', size) + time_msg.encode()
+        self.connection.send(msg)
+
         log.info('Preparing and sending results')
         ti = time()
         result = json.dumps(result)
